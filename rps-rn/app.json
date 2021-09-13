@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "rps-rn",
+    "slug": "rps-rn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "rps-rn"
+}
