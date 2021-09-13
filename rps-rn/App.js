@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     marginTop: 20,
+    borderRadius: 50
   },
   btnWeaponTxt: {
     color: "darkgray",
@@ -77,6 +78,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     marginTop: 20,
+    borderRadius: 50
   },
   btnStartTxt: {
     color: "black",
