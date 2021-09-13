@@ -18,8 +18,8 @@ export default function App() {
         <Player/>
       </View>
       <View>
-        <TouchableOpacity>
-          <Text>Button</Text>
+        <TouchableOpacity style={styles.btnWeapon}>
+          <Text style={styles.btnWeaponTxt}>Button</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -39,5 +39,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     padding: 10,
     fontWeight: "bold",
+  },
+  btnWeapon: {
+    backgroundColor: "black",
+    padding: 10,
+    marginTop: 20,
+  },
+  btnWeaponTxt: {
+    color: "darkgray",
+    fontWeight: "bold",
+    fontSize: 18,
   },
 });
