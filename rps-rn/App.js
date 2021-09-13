@@ -16,10 +16,30 @@ export default function App() {
     let gameInterval = setInterval(() => {
       count++;
       this.setState({
-        playerTwo: weapons(Math.floor(Math.random( * weapons.length)))
+        playerTwo: weapons(Math.floor(Math.random() * weapons.length)),
+        winner: ""
       })
-    })
+      if(count > 5) {
+        clearInterval(gameInterval);
+        this.setState({
+          winnter: selectWinnter()
+        });
+      }
+    }, 100)
   }
+
+  const selectWinner = () => {
+    const {playerOne, playerTwo} = this.state;
+    if(playerOne === playerTwo) {
+      return "Oops, its a tie !"
+    } else if ((playerOne === "rock" && playerTwo === "scissors") || 
+    (playerOne === "scissor" && playerTwo === "paper") || 
+    (playerOne == "paper" && playerTwo == "rock")) {
+      return "Player One Wins !"
+    } else {
+      return "Player Two Wins !"
+    }
+  };
 
   const {playerOne, playerTwo, winner} = state;
   return (
@@ -44,7 +64,7 @@ export default function App() {
         <Text style={styles.winner}>winner</Text>
       </View>
       <TouchableOpacity style={styles.btnStart}>
-        <Text style={styles.btnStartTxt}>Start</Text>
+        <Text style={styles.btnStartTxt} onPress={startGame}>Start</Text>
       </TouchableOpacity>
     </View>
   );
