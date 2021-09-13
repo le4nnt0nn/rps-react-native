@@ -4,10 +4,12 @@ import rock from "./assets/icons/rock.png";
 import paper from "./assets/icons/paper.png";
 import scissors from "./assets/icons/scissors.png";
 
-const Player = ({ weapons }) => {
+const Player = ({ weapon }) => {
   return (
     <View>
-      <Image style={styles.playerIcon} source={rock} />
+      <Image style={styles.playerIcon} source={
+          weapon === "rock" ? rock : weapon === "scissors" ? scissors : paper
+      } />
     </View>
   );
 };
