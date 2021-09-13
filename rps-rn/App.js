@@ -1,11 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
+      <View>
+        <Player/>
+      </View>
     </View>
   );
 }
