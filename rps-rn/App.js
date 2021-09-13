@@ -28,6 +28,9 @@ export default function App() {
           <Text style={styles.btnWeaponTxt}>Scissors</Text>
         </TouchableOpacity>
       </View>
+      <View>
+        <Text style={styles.winner}>winner</Text>
+      </View>
     </View>
   );
 }
@@ -61,4 +64,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
   },
+  winner: {
+    color: "#750901",
+    fontWeight: "bold",
+    fontSize: 20
+  }
 });
