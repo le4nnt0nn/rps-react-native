@@ -11,6 +11,16 @@ export default function App() {
     winner: ""
   }
 
+  const startGame = () => {
+    let count = 0;
+    let gameInterval = setInterval(() => {
+      count++;
+      this.setState({
+        playerTwo: weapons(Math.floor(Math.random( * weapons.length)))
+      })
+    })
+  }
+
   const {playerOne, playerTwo, winner} = state;
   return (
     <View style={styles.container}>
