@@ -14,7 +14,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
-      <View>
+      <View style={styles.playerWrapper}>
+        <Player/>
         <Player/>
       </View>
       <View style={styles.btnBox}>
@@ -51,6 +52,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     padding: 10,
     fontWeight: "bold",
+  },
+  playerWrapper: {
+    flexDirection: "row",
   },
   btnBox: {
     flexDirection: "row",
