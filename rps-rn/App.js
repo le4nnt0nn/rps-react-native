@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+const weapons = ["rock", "paper", "scissors"];
 export default function App() {
   return (
     <View style={styles.container}>
@@ -9,6 +10,7 @@ export default function App() {
   );
 }
 
+// styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
