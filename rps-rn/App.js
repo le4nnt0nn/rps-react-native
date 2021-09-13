@@ -11,12 +11,13 @@ export default function App() {
     winner: ""
   }
 
+  const {playerOne, playerTwo, winner} = state;
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player/>
-        <Player/>
+        <Player weapon={playerOne}/>
+        <Player weapon={playerTwo}/>
       </View>
       <View style={styles.btnBox}>
         <TouchableOpacity style={styles.btnWeapon}>
