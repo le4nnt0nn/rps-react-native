@@ -31,6 +31,9 @@ export default function App() {
       <View>
         <Text style={styles.winner}>winner</Text>
       </View>
+      <TouchableOpacity style={styles.btnStart}>
+        <Text style={styles.btnStartTxt}>Start</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -68,5 +71,17 @@ const styles = StyleSheet.create({
     color: "#750901",
     fontWeight: "bold",
     fontSize: 20
+  },
+  btnStart: {
+    backgroundColor: "white",
+    padding: 10,
+    margin: 10,
+    marginTop: 20,
+  },
+  btnStartTxt: {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 18,
+    textAlign: "center",
   }
 });
