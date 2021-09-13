@@ -1,11 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
 export default function App() {
 
-  let state = {
+  // const [state, setState] = useState(null)
+
+  const state = {
     playerOne: weapons[0],
     playerTwo: weapons[0],
     winner: ""
@@ -15,21 +18,21 @@ export default function App() {
     let count = 0;
     let gameInterval = setInterval(() => {
       count++;
-      this.setState({
+      state({
         playerTwo: weapons(Math.floor(Math.random() * weapons.length)),
         winner: ""
       })
       if(count > 5) {
         clearInterval(gameInterval);
-        this.setState({
-          winnter: selectWinnter()
+        state({
+          winner: selectWinner()
         });
       }
     }, 100)
   }
 
   const selectWinner = () => {
-    const {playerOne, playerTwo} = this.state;
+    const {playerOne, playerTwo} = state;
     if(playerOne === playerTwo) {
       return "Oops, its a tie !"
     } else if ((playerOne === "rock" && playerTwo === "scissors") || 
@@ -42,7 +45,7 @@ export default function App() {
   };
 
   const selectWeapon = (weapon) => {
-    this.setState({
+    this.state({
       playerOne: weapon,
       winner: ""
     })
