@@ -17,9 +17,15 @@ export default function App() {
       <View>
         <Player/>
       </View>
-      <View>
+      <View style={styles.btnBox}>
         <TouchableOpacity style={styles.btnWeapon}>
-          <Text style={styles.btnWeaponTxt}>Button</Text>
+          <Text style={styles.btnWeaponTxt}>Rock</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btnWeapon}>
+          <Text style={styles.btnWeaponTxt}>Paper</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btnWeapon}>
+          <Text style={styles.btnWeaponTxt}>Scissors</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -40,14 +46,19 @@ const styles = StyleSheet.create({
     padding: 10,
     fontWeight: "bold",
   },
+  btnBox: {
+    flexDirection: "row",
+  },
   btnWeapon: {
     backgroundColor: "black",
     padding: 10,
+    margin: 10,
     marginTop: 20,
   },
   btnWeaponTxt: {
     color: "darkgray",
     fontWeight: "bold",
     fontSize: 18,
+    textAlign: "center",
   },
 });
