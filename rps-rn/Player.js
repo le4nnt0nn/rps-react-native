@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Player = ({weapons}) => {
     return (
-        <div className="p">
-
-        </div>
+        <View className="p">
+            <Text>ex</Text>
+        </View>
     )
 }
 
