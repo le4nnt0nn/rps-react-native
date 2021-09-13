@@ -41,6 +41,13 @@ export default function App() {
     }
   };
 
+  const selectWeapon = (weapon) => {
+    this.setState({
+      playerOne: weapon,
+      winner: ""
+    })
+  }
+
   const {playerOne, playerTwo, winner} = state;
   return (
     <View style={styles.container}>
@@ -50,14 +57,14 @@ export default function App() {
         <Player weapon={playerTwo}/>
       </View>
       <View style={styles.btnBox}>
-        <TouchableOpacity style={styles.btnWeapon}>
+        <TouchableOpacity style={styles.btnWeapon} onPress={() => selectWeapon("rock")}>
           <Text style={styles.btnWeaponTxt}>Rock</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnWeapon}>
-          <Text style={styles.btnWeaponTxt}>Paper</Text>
+          <Text style={styles.btnWeaponTxt} onPress={() => selectWeapon("paper")}>Paper</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnWeapon}>
-          <Text style={styles.btnWeaponTxt}>Scissors</Text>
+          <Text style={styles.btnWeaponTxt} onPress={() => selectWeapon("scissors")}>Scissors</Text>
         </TouchableOpacity>
       </View>
       <View>
