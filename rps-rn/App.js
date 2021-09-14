@@ -5,45 +5,33 @@ import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
 export default function App() {
+  const selectedWeapon = (weapon) => {
+    Player.weapon = weapons[1];
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player weapon={weapons[0]} />
+        <Player weapon={"rock"} />
         <Player weapon={weapons[2]} />
       </View>
       <View style={styles.btnBox}>
-        <TouchableOpacity
-          style={styles.btnWeapon}
-          onPress={() => weapons[0]}
-        >
+        <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[0]}>
           <Text style={styles.btnWeaponTxt}>Rock</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btnWeapon}>
-          <Text
-            style={styles.btnWeaponTxt}
-            onPress={weapons[1]}
-          >
-            Paper
-          </Text>
+        <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[1]}>
+          <Text style={styles.btnWeaponTxt}>Paper</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btnWeapon}>
-          <Text
-            style={styles.btnWeaponTxt}
-            onPress={weapons[2]}
-          >
-            Scissors
-          </Text>
+        <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[2]}>
+          <Text style={styles.btnWeaponTxt}>Scissors</Text>
         </TouchableOpacity>
       </View>
       <View>
         <Text style={styles.winner}>winner</Text>
       </View>
       <TouchableOpacity style={styles.btnStart}>
-        <Text style={styles.btnStartTxt}>
-          Start
-        </Text>
+        <Text style={styles.btnStartTxt}>Start</Text>
       </TouchableOpacity>
     </View>
   );
