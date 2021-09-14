@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import RNRestart from "react-native-restart";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
@@ -20,6 +21,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
+      <View style={styles.playerWrapper}>
+        <Player weapon={weapons[Math.floor(Math.random() * (weapons.length))]} />
+      </View>
       <TouchableOpacity style={styles.btnStart} onPress={startGame}>
         <Text style={styles.btnStartTxt}>Start</Text>
       </TouchableOpacity>
