@@ -3,26 +3,27 @@ import { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
+const weapons = ["rock", "paper", "scissors"];
 export default function App() {
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player weapon={"scissors"} />
-        <Player weapon={"rock"} />
+        <Player weapon={() => weapons[0]} />
+        <Player weapon={() => weapons[1]} />
       </View>
       <View style={styles.btnBox}>
         <TouchableOpacity
           style={styles.btnWeapon}
-          onPress={"df"}
+          onPress={() => weapons[0]}
         >
           <Text style={styles.btnWeaponTxt}>Rock</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnWeapon}>
           <Text
             style={styles.btnWeaponTxt}
-            onPress={"ss"}
+            onPress={weapons[1]}
           >
             Paper
           </Text>
@@ -30,7 +31,7 @@ export default function App() {
         <TouchableOpacity style={styles.btnWeapon}>
           <Text
             style={styles.btnWeaponTxt}
-            onPress={"sd"}
+            onPress={weapons[2]}
           >
             Scissors
           </Text>
