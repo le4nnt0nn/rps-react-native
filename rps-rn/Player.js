@@ -17,8 +17,8 @@ const Player = ({ weapon }) => {
 // styles
 const styles = StyleSheet.create({
     playerIcon: {
-        width: 100,
-        height: 100,
+        width: 200,
+        height: 200,
         margin: 15
     }
 });
