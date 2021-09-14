@@ -71,7 +71,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <View>
-        <Text style={styles.winner}>winner</Text>
+        <Text style={styles.winner}>{winner ? this.selectWinner() : null}</Text>
       </View>
       <TouchableOpacity style={styles.btnStart}>
         <Text style={styles.btnStartTxt} onPress={startGame}>Start</Text>
