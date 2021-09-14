@@ -18,13 +18,13 @@ export default function App() {
     let count = 0;
     let gameInterval = setInterval(() => {
       count++;
-      state({
-        playerTwo: weapons(Math.floor(Math.random() * weapons.length)),
+      this.state({
+        playerTwo: weapons[Math.floor(Math.random() * weapons.length)],
         winner: ""
       })
       if(count > 5) {
         clearInterval(gameInterval);
-        state({
+        this.state({
           winner: selectWinner()
         });
       }
@@ -32,7 +32,7 @@ export default function App() {
   }
 
   const selectWinner = () => {
-    const {playerOne, playerTwo} = state;
+    const {playerOne, playerTwo} = this.state;
     if(playerOne === playerTwo) {
       return "Oops, its a tie !"
     } else if ((playerOne === "rock" && playerTwo === "scissors") || 
