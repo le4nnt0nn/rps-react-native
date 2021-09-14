@@ -5,27 +5,12 @@ import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
 export default function App() {
-  const selectedWeapon = (weapon) => {
-    Player.weapon = weapons[1];
-  };
-
+ 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player weapon={"rock"} />
         <Player weapon={weapons[Math.floor(Math.random() * (weapons.length))]} />
-      </View>
-      <View style={styles.btnBox}>
-        <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[0]}>
-          <Text style={styles.btnWeaponTxt}>Rock</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[1]}>
-          <Text style={styles.btnWeaponTxt}>Paper</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[2]}>
-          <Text style={styles.btnWeaponTxt}>Scissors</Text>
-        </TouchableOpacity>
       </View>
       <View>
         <Text style={styles.winner}>winner</Text>
@@ -41,7 +26,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#292929",
+    backgroundColor: "#3381ff",
     alignItems: "center",
     justifyContent: "center",
   },
