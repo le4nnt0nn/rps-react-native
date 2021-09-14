@@ -6,50 +6,7 @@ import Player from "./Player";
 const weapons = ["rock", "paper", "scissors"];
 export default function App() {
 
-  // const [state, setState] = useState(null)
 
-  const state = {
-    playerOne: weapons[0],
-    playerTwo: weapons[0],
-    winner: ""
-  }
-
-  const startGame = () => {
-    let count = 0;
-    let gameInterval = setInterval(() => {
-      count++;
-      this.state({
-        playerTwo: weapons[Math.floor(Math.random() * weapons.length)],
-        winner: ""
-      })
-      if(count > 5) {
-        clearInterval(gameInterval);
-        this.state({
-          winner: selectWinner()
-        });
-      }
-    }, 100)
-  }
-
-  const selectWinner = () => {
-    const {playerOne, playerTwo} = this.state;
-    if(playerOne === playerTwo) {
-      return "Oops, its a tie !"
-    } else if ((playerOne === "rock" && playerTwo === "scissors") || 
-    (playerOne === "scissor" && playerTwo === "paper") || 
-    (playerOne == "paper" && playerTwo == "rock")) {
-      return "Player One Wins !"
-    } else {
-      return "Player Two Wins !"
-    }
-  };
-
-  const selectWeapon = (weapon) => {
-    this.state({
-      playerOne: weapon,
-      winner: ""
-    })
-  }
 
   const {playerOne, playerTwo, winner} = state;
   return (
