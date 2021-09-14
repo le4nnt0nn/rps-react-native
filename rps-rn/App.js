@@ -3,35 +3,46 @@ import { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
-const weapons = ["rock", "paper", "scissors"];
 export default function App() {
 
-
-
-  const {playerOne, playerTwo, winner} = state;
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player weapon={playerOne}/>
-        <Player weapon={playerTwo}/>
+        <Player weapon={"scissors"} />
+        <Player weapon={"rock"} />
       </View>
       <View style={styles.btnBox}>
-        <TouchableOpacity style={styles.btnWeapon} onPress={() => selectWeapon("rock")}>
+        <TouchableOpacity
+          style={styles.btnWeapon}
+          onPress={"df"}
+        >
           <Text style={styles.btnWeaponTxt}>Rock</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnWeapon}>
-          <Text style={styles.btnWeaponTxt} onPress={() => selectWeapon("paper")}>Paper</Text>
+          <Text
+            style={styles.btnWeaponTxt}
+            onPress={"ss"}
+          >
+            Paper
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnWeapon}>
-          <Text style={styles.btnWeaponTxt} onPress={() => selectWeapon("scissors")}>Scissors</Text>
+          <Text
+            style={styles.btnWeaponTxt}
+            onPress={"sd"}
+          >
+            Scissors
+          </Text>
         </TouchableOpacity>
       </View>
       <View>
-        <Text style={styles.winner}>{winner ? this.selectWinner() : null}</Text>
+        <Text style={styles.winner}>winner</Text>
       </View>
       <TouchableOpacity style={styles.btnStart}>
-        <Text style={styles.btnStartTxt} onPress={startGame}>Start</Text>
+        <Text style={styles.btnStartTxt}>
+          Start
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -62,7 +73,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     marginTop: 20,
-    borderRadius: 50
+    borderRadius: 50,
   },
   btnWeaponTxt: {
     color: "darkgray",
@@ -73,19 +84,19 @@ const styles = StyleSheet.create({
   winner: {
     color: "#750901",
     fontWeight: "bold",
-    fontSize: 20
+    fontSize: 20,
   },
   btnStart: {
     backgroundColor: "white",
     padding: 10,
     margin: 10,
     marginTop: 20,
-    borderRadius: 50
+    borderRadius: 50,
   },
   btnStartTxt: {
     color: "black",
     fontWeight: "bold",
     fontSize: 18,
     textAlign: "center",
-  }
+  },
 });
