@@ -12,9 +12,6 @@ export default function App() {
       <View style={styles.playerWrapper}>
         <Player weapon={weapons[Math.floor(Math.random() * (weapons.length))]} />
       </View>
-      <View>
-        <Text style={styles.winner}>winner</Text>
-      </View>
       <TouchableOpacity style={styles.btnStart}>
         <Text style={styles.btnStartTxt}>Start</Text>
       </TouchableOpacity>
@@ -32,33 +29,20 @@ const styles = StyleSheet.create({
   },
   header: {
     color: "white",
-    fontSize: 20,
+    fontSize: 30,
     padding: 10,
     fontWeight: "bold",
   },
   playerWrapper: {
     flexDirection: "row",
   },
-  btnBox: {
-    flexDirection: "row",
-  },
+ 
   btnWeapon: {
     backgroundColor: "black",
     padding: 10,
     margin: 10,
     marginTop: 20,
     borderRadius: 50,
-  },
-  btnWeaponTxt: {
-    color: "darkgray",
-    fontWeight: "bold",
-    fontSize: 18,
-    textAlign: "center",
-  },
-  winner: {
-    color: "#750901",
-    fontWeight: "bold",
-    fontSize: 20,
   },
   btnStart: {
     backgroundColor: "white",
