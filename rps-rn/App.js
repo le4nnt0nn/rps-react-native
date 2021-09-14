@@ -10,8 +10,8 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player weapon={() => weapons[0]} />
-        <Player weapon={() => weapons[1]} />
+        <Player weapon={weapons[0]} />
+        <Player weapon={weapons[2]} />
       </View>
       <View style={styles.btnBox}>
         <TouchableOpacity
