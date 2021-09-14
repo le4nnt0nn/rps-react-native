@@ -11,11 +11,6 @@ export default function App() {
 
   const startGame = () => {
     console.log("activatedGame");
-    return (
-      <View style={styles.playerWrapper}>
-        <Player weapon={weapons[Math.floor(Math.random() * (weapons.length))]} />
-      </View>
-    );
   }
  
   return (
