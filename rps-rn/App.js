@@ -14,7 +14,7 @@ export default function App() {
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
         <Player weapon={"rock"} />
-        <Player weapon={weapons[2]} />
+        <Player weapon={weapons[Math.floor(Math.random() * (weapons.length))]} />
       </View>
       <View style={styles.btnBox}>
         <TouchableOpacity style={styles.btnWeapon} onPress={() => weapons[0]}>
