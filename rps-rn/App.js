@@ -23,8 +23,12 @@ export default function App() {
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
-        <Text style={styles.resultsTxt}>Human</Text>
-        <Text style={styles.resultsTxt}style={styles.resultsTxt}>COM</Text>
+        <TouchableOpacity>
+          <Text style={styles.resultsTxt}>Human</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.resultsTxt}>COM</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
