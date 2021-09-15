@@ -22,6 +22,10 @@ export default function App() {
       <TouchableOpacity style={styles.btnStart} onPress={startGame}>
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
+      <View style={styles.resultsWrapper}>
+        <Text style={styles.resultsTxt}>Human</Text>
+        <Text style={styles.resultsTxt}style={styles.resultsTxt}>COM</Text>
+      </View>
     </View>
   );
 }
@@ -59,4 +63,15 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: "center",
   },
+  resultsWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  resultsTxt: {
+    marginTop: 30,
+    marginLeft: 80,
+    marginRight: 80,
+    fontSize: 18,
+    fontWeight: "bold",
+  }
 });
