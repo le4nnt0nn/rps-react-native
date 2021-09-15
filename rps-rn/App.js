@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
+const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again"]
 export default function App() {
   const [startClicked, setStartClicked] = useState(null);
 
@@ -19,7 +20,7 @@ export default function App() {
         <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
       <TouchableOpacity style={styles.btnStart} onPress={startGame}>
-        <Text style={styles.btnStartTxt}>Start</Text>
+      <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
     </View>
   );
