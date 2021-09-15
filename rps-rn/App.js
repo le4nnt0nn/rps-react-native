@@ -42,14 +42,6 @@ const styles = StyleSheet.create({
   playerWrapper: {
     flexDirection: "row",
   },
-
-  btnWeapon: {
-    backgroundColor: "black",
-    padding: 10,
-    margin: 10,
-    marginTop: 20,
-    borderRadius: 50,
-  },
   btnStart: {
     backgroundColor: "white",
     padding: 10,
