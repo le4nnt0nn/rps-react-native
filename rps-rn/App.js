@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import RNRestart from "react-native-restart";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
