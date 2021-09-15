@@ -5,19 +5,18 @@ import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
 export default function App() {
-
   const [startClicked, setStartClicked] = useState(null);
 
   const startGame = () => {
     console.log("activatedGame");
     setStartClicked(!startClicked);
-  }
- 
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
-        <Player weapon={weapons[Math.floor(Math.random() * (weapons.length))]} />
+        <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
       <TouchableOpacity style={styles.btnStart} onPress={startGame}>
         <Text style={styles.btnStartTxt}>Start</Text>
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
   playerWrapper: {
     flexDirection: "row",
   },
- 
+
   btnWeapon: {
     backgroundColor: "black",
     padding: 10,
