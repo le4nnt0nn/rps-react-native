@@ -8,9 +8,9 @@ export default function App() {
 
   const [startClicked, setStartClicked] = useState(null);
 
-  function startGame() {
+  const startGame = () => {
     console.log("activatedGame");
-    window.location.reload(false);
+    setStartClicked(!startClicked);
   }
  
   return (
