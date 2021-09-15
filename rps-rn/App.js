@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Player from "./Player";
 
 const weapons = ["rock", "paper", "scissors"];
-const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again"]
+const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again", "You are good", "Just Play"]
 export default function App() {
   const [startClicked, setStartClicked] = useState(null);
 
