@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
   },
   btnStart: {
     backgroundColor: "white",
+    textAlign: "center",
+    width: 200,
+    height: 50,
     padding: 10,
     margin: 10,
     marginTop: 20,
