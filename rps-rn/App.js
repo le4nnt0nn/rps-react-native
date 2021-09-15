@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   btnStartTxt: {
     color: "black",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 25,
     textAlign: "center",
   },
 });
