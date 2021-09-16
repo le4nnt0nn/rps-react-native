@@ -35,12 +35,16 @@ export default function App() {
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
         <TouchableOpacity onPress={() => addScoreH(scoreHuman)}>
-          <Text style={styles.resultsTxt}>Human</Text>
-          <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
+          <View style={styles.resultsWrapperContainer}>
+            <Text style={styles.resultsTxt}>Human</Text>
+            <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
-          <Text style={styles.resultsTxt}>COM</Text>
-          <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
+          <View style={styles.resultsWrapperContainer}>
+            <Text style={styles.resultsTxt}>COM</Text>
+            <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
@@ -84,17 +88,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
+  resultsWrapperContainer: {
+    alignItems: "center"
+  },
   resultsTxt: {
     marginTop: 30,
-    marginLeft: 80,
-    marginRight: 80,
+    marginLeft: 50,
+    marginRight: 50,
     fontSize: 18,
     fontWeight: "bold",
   },
   resultTxtPoint: {
-    marginTop: 30,
-    marginLeft: 80,
-    marginRight: 80,
-    fontSize: 18,
+    marginTop: 10,
+    fontSize: 23,
   }
 });
