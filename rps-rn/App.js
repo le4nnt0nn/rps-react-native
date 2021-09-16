@@ -19,13 +19,13 @@ export default function App() {
   };
 
   const addScoreH = sc => {
-    console.log("addedScore");
+    console.log("addedScoreHuman");
     sc = sc + sc + 1
     setScoreHuman(sc)
   };
 
   const addScoreC = sc => {
-    console.log("addedScore");
+    console.log("addedScoreCom");
     sc = sc + sc + 1
     setScoreCom(sc)
   };
