@@ -6,23 +6,20 @@ import Player from "./Player";
 const weapons = ["rock", "paper", "scissors"];
 const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again", "You are good", "Just Play"]
 export default function App() {
-  const [startClicked, setStartClicked] = useState(null);
+  const [startClicked, setStartClicked] = useState(false);
   const [scoreHuman, setScoreHuman] = useState(null);
   const [scoreCom, setScoreCom] = useState(null);
 
-  const startGame = () => {
-    console.log("activatedGame");
-    setStartClicked(!startClicked);
-  };
-
   const addScoreH = sc => {
     console.log("addedScoreHuman");
+    setStartClicked(!startClicked);
     sc = sc + 1
     setScoreHuman(sc)
   };
 
   const addScoreC = sc => {
     console.log("addedScoreCom");
+    setStartClicked(!startClicked);
     sc = sc + 1
     setScoreCom(sc)
   };
@@ -33,7 +30,7 @@ export default function App() {
       <View style={styles.playerWrapper}>
         <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
-      <TouchableOpacity style={styles.btnStart} onPress={startGame}>
+      <TouchableOpacity style={styles.btnStart}>
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
