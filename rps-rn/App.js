@@ -7,10 +7,20 @@ const weapons = ["rock", "paper", "scissors"];
 const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again", "You are good", "Just Play"]
 export default function App() {
   const [startClicked, setStartClicked] = useState(null);
+  const [score, setScore] = useState(null);
+
+  let scoreHuman = 0;
+  let scoreCom;
 
   const startGame = () => {
     console.log("activatedGame");
     setStartClicked(!startClicked);
+  };
+
+  const addScore = sc => {
+    console.log("addedScore");
+    sc = sc + 1
+    setScore(sc)
   };
 
   return (
@@ -23,11 +33,13 @@ export default function App() {
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => addScore(scoreHuman)}>
           <Text style={styles.resultsTxt}>Human</Text>
+          <Text style={styles.resultTxtPoint}>{score}</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => addScore(scoreCom)}>
           <Text style={styles.resultsTxt}>COM</Text>
+          <Text style={styles.resultTxtPoint}>{score}</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -77,5 +89,11 @@ const styles = StyleSheet.create({
     marginRight: 80,
     fontSize: 18,
     fontWeight: "bold",
+  },
+  resultTxtPoint: {
+    marginTop: 30,
+    marginLeft: 80,
+    marginRight: 80,
+    fontSize: 18,
   }
 });
