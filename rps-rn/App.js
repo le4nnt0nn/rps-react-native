@@ -10,9 +10,6 @@ export default function App() {
   const [scoreHuman, setScoreHuman] = useState(null);
   const [scoreCom, setScoreCom] = useState(null);
 
-  let pHuman = 0;
-  let pCom = 0;
-
   const startGame = () => {
     console.log("activatedGame");
     setStartClicked(!startClicked);
@@ -20,13 +17,13 @@ export default function App() {
 
   const addScoreH = sc => {
     console.log("addedScoreHuman");
-    sc = sc + sc + 1
+    sc = sc + 1
     setScoreHuman(sc)
   };
 
   const addScoreC = sc => {
     console.log("addedScoreCom");
-    sc = sc + sc + 1
+    sc = sc + 1
     setScoreCom(sc)
   };
 
@@ -40,11 +37,11 @@ export default function App() {
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
-        <TouchableOpacity onPress={() => addScoreH(pHuman)}>
+        <TouchableOpacity onPress={() => addScoreH(scoreHuman)}>
           <Text style={styles.resultsTxt}>Human</Text>
           <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => addScoreC(pCom)}>
+        <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
           <Text style={styles.resultsTxt}>COM</Text>
           <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
         </TouchableOpacity>
