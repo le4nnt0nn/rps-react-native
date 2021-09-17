@@ -50,4 +50,11 @@ Used [React Native](https://reactnative.dev/ "React Native Documentation").
  
 ### 📷 Templates
 
-
+#### Init App View (Splash)
+![Splash](./.docs/splash.png "Splash View")
+     
+#### Game View
+![Overview](./.docs/overview.png "Main View")     
+     
+#### Win Game View (Humans Win! Yay!)
+![OverviewVictory](./docs/overview2.png "Victory View")
