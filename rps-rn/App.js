@@ -33,7 +33,7 @@ export default function App() {
       <View style={styles.playerWrapper}>
         <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
-      <TouchableOpacity style={styles.btnStart} onPress={() => {startGame(); {scoreHuman > 5 ? scoreHuman = null : null || scoreCom > 5 ? scoreCom = null : null}}}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => startGame()}>
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
