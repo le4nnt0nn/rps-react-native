@@ -6,27 +6,35 @@ import human from "./assets/icons/human-icon.png";
 import robot from "./assets/icons/robot-icon.png";
 
 const weapons = ["rock", "paper", "scissors"];
-const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again", "You are good", "Just Play"]
+const initButtons = [
+  "Gooo",
+  "Do it",
+  "You Can Win",
+  "Come on",
+  "Try it Again",
+  "You are good",
+  "Just Play",
+];
 export default function App() {
   const [startClicked, setStartClicked] = useState(false);
   const [scoreHuman, setScoreHuman] = useState(null);
   const [scoreCom, setScoreCom] = useState(null);
 
   const startGame = () => {
-    console.log("startedGame")
-    setStartClicked(!startClicked)
-  }
-
-  const addScoreH = sc => {
-    console.log("addedScoreHuman");
-    sc = sc + 1
-    setScoreHuman(sc)
+    console.log("startedGame");
+    setStartClicked(!startClicked);
   };
 
-  const addScoreC = sc => {
+  const addScoreH = (sc) => {
+    console.log("addedScoreHuman");
+    sc = sc + 1;
+    setScoreHuman(sc);
+  };
+
+  const addScoreC = (sc) => {
     console.log("addedScoreCom");
-    sc = sc + 1
-    setScoreCom(sc)
+    sc = sc + 1;
+    setScoreCom(sc);
   };
 
   return (
@@ -36,29 +44,37 @@ export default function App() {
         <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
       <TouchableOpacity style={styles.btnStart} onPress={() => startGame()}>
-      <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
+        <Text style={styles.btnStartTxt}>
+          {initButtons[Math.floor(Math.random() * initButtons.length)]}
+        </Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
         <TouchableOpacity onPress={() => addScoreH(scoreHuman)}>
           <View style={styles.resultsWrapperContainer}>
             <Image style={styles.playerIcon} source={human}></Image>
             <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
-            { scoreHuman === 5 ? <Text>Human Wins ! </Text> : null }
+            {scoreHuman === 5 ? <Text>Human Wins ! </Text> : null}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
           <View style={styles.resultsWrapperContainer}>
             <Image style={styles.playerIcon} source={robot}></Image>
             <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
-            { scoreCom === 5 ? <Text>Com Wins ! </Text> : null}
+            {scoreCom === 5 ? <Text>Com Wins ! </Text> : null}
           </View>
-          { scoreCom >=5 || scoreHuman >=5 ?
+          {scoreCom >= 5 || scoreHuman >= 5 ? (
             <View style={styles.restartWrapper}>
-              <TouchableOpacity style={styles.btnRestart} onPress={() => {setScoreHuman(null); setScoreCom(null);}}>
-              <Text style={styles.btnRestartTxT}>Play Again</Text>
-              </TouchableOpacity> 
-            </View> : null
-          }
+              <TouchableOpacity
+                style={styles.btnRestart}
+                onPress={() => {
+                  setScoreHuman(null);
+                  setScoreCom(null);
+                }}
+              >
+                <Text style={styles.btnRestartTxT}>Play Again</Text>
+              </TouchableOpacity>
+            </View>
+          ) : null}
         </TouchableOpacity>
       </View>
     </View>
@@ -105,7 +121,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   resultsWrapperContainer: {
-    alignItems: "center"
+    alignItems: "center",
   },
   playerIcon: {
     height: 90,
@@ -118,10 +134,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 23,
   },
-  restartWrapper : {
+  restartWrapper: {
     alignContent: "center",
   },
-  btnRestart : {
+  btnRestart: {
     backgroundColor: "#ef5480",
     justifyContent: "center",
     width: 200,
@@ -133,10 +149,10 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     borderColor: "#601454",
   },
-  btnRestartTxT : {
+  btnRestartTxT: {
     color: "black",
     fontWeight: "bold",
     fontSize: 25,
     textAlign: "center",
-  }
+  },
 });
