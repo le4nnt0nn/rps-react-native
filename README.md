@@ -52,7 +52,9 @@ Used [React Native](https://reactnative.dev/ "React Native Documentation").
 ### 📷 Templates
 
 #### Init App View (Splash)
-![Splash](./.docs/splash.png "Splash View")
+<div align="center">
+ <img src="./.docs/splash.png" alt="splash" width="500" height="500">  
+</div>
      
 #### Game View
 ![Overview](./.docs/overview.png "Main View")     
