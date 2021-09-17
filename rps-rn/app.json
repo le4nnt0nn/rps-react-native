@@ -3,6 +3,7 @@
     "name": "rps-rn",
     "slug": "rps-rn",
     "version": "1.0.0",
+    "icon": "./assets//logo/logo.png",
     "splash": {
       "image": "./assets/splash/splash.png",
       "resizeMode": "contain",
