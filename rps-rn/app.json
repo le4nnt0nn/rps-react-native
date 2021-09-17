@@ -11,7 +11,10 @@
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.le4nnt0nn.reactnativerps"
+    }
   },
   "name": "rps-rn"
 }
