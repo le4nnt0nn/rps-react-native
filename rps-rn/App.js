@@ -50,6 +50,11 @@ export default function App() {
             <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
             { scoreCom >= 5 ? <Text>Com Wins ! </Text> : null}
           </View>
+          { scoreCom >=5 || scoreHuman >=5 ?  
+            <TouchableOpacity onPress={() => {setScoreHuman(null); setScoreCom(null);}}>
+              <Text>Play Again</Text>
+            </TouchableOpacity> : null
+          }
         </TouchableOpacity>
       </View>
     </View>
