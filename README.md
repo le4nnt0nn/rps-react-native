@@ -59,5 +59,5 @@ Used [React Native](https://reactnative.dev/ "React Native Documentation").
 #### Game View
 ![Overview](./.docs/overview.png "Main View")     
      
-#### Win Game View (Humans Win! Yay!)
+#### Win Game View (Human Win! Yay!)
 ![OverviewVictory](./.docs/overview2.png "Victory View")
