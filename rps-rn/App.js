@@ -5,7 +5,10 @@ import Player from "./Player";
 import human from "./assets/icons/human-icon.png";
 import robot from "./assets/icons/robot-icon.png";
 
+// weapons in game
 const weapons = ["rock", "paper", "scissors"];
+
+// phrases for play button
 const initButtons = [
   "Gooo",
   "Do it",
@@ -20,17 +23,20 @@ export default function App() {
   const [scoreHuman, setScoreHuman] = useState(null);
   const [scoreCom, setScoreCom] = useState(null);
 
+  // modify startClicked state
   const startGame = () => {
     console.log("startedGame");
     setStartClicked(!startClicked);
   };
 
+  // this function set Score to Human
   const addScoreH = (sc) => {
     console.log("addedScoreHuman");
     sc = sc + 1;
     setScoreHuman(sc);
   };
 
+  // this function set Score to COM
   const addScoreC = (sc) => {
     console.log("addedScoreCom");
     sc = sc + 1;
@@ -41,10 +47,12 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.header}>Rock, Paper, Scissors</Text>
       <View style={styles.playerWrapper}>
+        {/* appears random weapon on the screen*/}
         <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
       <TouchableOpacity style={styles.btnStart} onPress={() => startGame()}>
         <Text style={styles.btnStartTxt}>
+          {/* random motivational phrases */}
           {initButtons[Math.floor(Math.random() * initButtons.length)]}
         </Text>
       </TouchableOpacity>
@@ -53,15 +61,23 @@ export default function App() {
           <View style={styles.resultsWrapperContainer}>
             <Image style={styles.playerIcon} source={human}></Image>
             <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
-            {scoreHuman === 5 ? <Text style={styles.victoryTxt}>Human Wins ! </Text> : null}
+            {/* if Human score is 5 then victory txt apppears */}
+            {scoreHuman === 5 ? (
+              <Text style={styles.victoryTxt}>Human Wins ! </Text>
+            ) : null}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
           <View style={styles.resultsWrapperContainer}>
             <Image style={styles.playerIcon} source={robot}></Image>
             <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
-            {scoreCom === 5 ? <Text style={styles.victoryTxt}>Com Wins ! </Text> : null}
+            {/* if COM score is 5 then victory txt apppears */}
+            {scoreCom === 5 ? (
+              <Text style={styles.victoryTxt}>Com Wins ! </Text>
+            ) : null}
           </View>
+          {/* if any of the players reaches 5 points, 
+          Play Again appears and reset counters*/}
           {scoreCom >= 5 || scoreHuman >= 5 ? (
             <View style={styles.restartWrapper}>
               <TouchableOpacity
@@ -135,7 +151,7 @@ const styles = StyleSheet.create({
     fontSize: 23,
     fontWeight: "bold",
   },
-  victoryTxt : {
+  victoryTxt: {
     textAlign: "center",
     fontSize: 18,
     fontWeight: "bold",
