@@ -53,7 +53,7 @@ Used [React Native](https://reactnative.dev/ "React Native Documentation").
 
 #### Init App View (Splash)
 <div>
- <img src="./.docs/splash.png" alt="splash" width="500" height="800">  
+ <img src="./.docs/splash.png" alt="splash" width="500" height="1000">  
 </div>
      
 #### Game View
