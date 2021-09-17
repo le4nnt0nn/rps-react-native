@@ -24,8 +24,8 @@
     </h3>
 </div>
      
-     <div>
-       ![Logo](./.docs/logo.png "App Logo")
+     <div align="center">
+       <img src="./.docs/logo.png" alt="logo" width="500" height="500">
      </div>
 
 ***
