@@ -23,6 +23,10 @@
         <span> | </span>
     </h3>
 </div>
+     
+     <div>
+       ![Logo](./.docs/logo.png "App Logo")
+     </div>
 
 ***
 
@@ -57,4 +61,4 @@ Used [React Native](https://reactnative.dev/ "React Native Documentation").
 ![Overview](./.docs/overview.png "Main View")     
      
 #### Win Game View (Humans Win! Yay!)
-![OverviewVictory](./docs/overview2.png "Victory View")
+![OverviewVictory](./.docs/overview2.png "Victory View")
