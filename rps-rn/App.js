@@ -53,14 +53,14 @@ export default function App() {
           <View style={styles.resultsWrapperContainer}>
             <Image style={styles.playerIcon} source={human}></Image>
             <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
-            {scoreHuman === 5 ? <Text>Human Wins ! </Text> : null}
+            {scoreHuman === 5 ? <Text style={styles.victoryTxt}>Human Wins ! </Text> : null}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
           <View style={styles.resultsWrapperContainer}>
             <Image style={styles.playerIcon} source={robot}></Image>
             <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
-            {scoreCom === 5 ? <Text>Com Wins ! </Text> : null}
+            {scoreCom === 5 ? <Text style={styles.victoryTxt}>Com Wins ! </Text> : null}
           </View>
           {scoreCom >= 5 || scoreHuman >= 5 ? (
             <View style={styles.restartWrapper}>
@@ -133,6 +133,13 @@ const styles = StyleSheet.create({
   resultTxtPoint: {
     marginTop: 10,
     fontSize: 23,
+    fontWeight: "bold",
+  },
+  victoryTxt : {
+    textAlign: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#d1d1d1",
   },
   restartWrapper: {
     alignContent: "center",
