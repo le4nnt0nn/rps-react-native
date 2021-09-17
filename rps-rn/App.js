@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import Player from "./Player";
+import human from "./assets/icons/human-icon.png";
+import robot from "./assets/icons/robot-icon.png";
 
 const weapons = ["rock", "paper", "scissors"];
 const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again", "You are good", "Just Play"]
@@ -39,14 +41,14 @@ export default function App() {
       <View style={styles.resultsWrapper}>
         <TouchableOpacity onPress={() => addScoreH(scoreHuman)}>
           <View style={styles.resultsWrapperContainer}>
-            <Text style={styles.resultsTxt}>Human</Text>
+            <Image style={styles.playerIcon} source={human}></Image>
             <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
             { scoreHuman === 5 ? <Text>Human Wins ! </Text> : null }
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
           <View style={styles.resultsWrapperContainer}>
-            <Text style={styles.resultsTxt}>COM</Text>
+            <Image style={styles.playerIcon} source={robot}></Image>
             <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
             { scoreCom === 5 ? <Text>Com Wins ! </Text> : null}
           </View>
@@ -105,12 +107,12 @@ const styles = StyleSheet.create({
   resultsWrapperContainer: {
     alignItems: "center"
   },
-  resultsTxt: {
+  playerIcon: {
+    height: 90,
+    width: 90,
     marginTop: 30,
     marginLeft: 50,
     marginRight: 50,
-    fontSize: 18,
-    fontWeight: "bold",
   },
   resultTxtPoint: {
     marginTop: 10,
