@@ -46,6 +46,7 @@ Used [React Native](https://reactnative.dev/ "React Native Documentation").
 ### 📋 Features
 
 * You are the human and you play against COM (1 player game)
+* If you click on Human or COM icon, you can add point
 * The first to reach 5 points win the game 
 * When the game finished, a Play Again button appears
  
