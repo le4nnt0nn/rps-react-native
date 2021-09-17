@@ -6,7 +6,7 @@ import Player from "./Player";
 const weapons = ["rock", "paper", "scissors"];
 const initButtons = ["Gooo", "Do it", "You Can Win", "Come on", "Try it Again", "You are good", "Just Play"]
 export default function App() {
-  const [startClicked, setStartClicked] = useState(true);
+  const [startClicked, setStartClicked] = useState(false);
   const [scoreHuman, setScoreHuman] = useState(null);
   const [scoreCom, setScoreCom] = useState(null);
 
@@ -17,14 +17,12 @@ export default function App() {
 
   const addScoreH = sc => {
     console.log("addedScoreHuman");
-    setStartClicked(false);
     sc = sc + 1
     setScoreHuman(sc)
   };
 
   const addScoreC = sc => {
     console.log("addedScoreCom");
-    setStartClicked(false);
     sc = sc + 1
     setScoreCom(sc)
   };
@@ -35,7 +33,7 @@ export default function App() {
       <View style={styles.playerWrapper}>
         <Player weapon={weapons[Math.floor(Math.random() * weapons.length)]} />
       </View>
-      <TouchableOpacity style={styles.btnStart} onPress={() => startGame()}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => {startGame(); {scoreHuman > 5 ? scoreHuman = null : null || scoreCom > 5 ? scoreCom = null : null}}}>
       <Text style={styles.btnStartTxt}>{initButtons[Math.floor(Math.random() * initButtons.length)]}</Text>
       </TouchableOpacity>
       <View style={styles.resultsWrapper}>
@@ -43,12 +41,14 @@ export default function App() {
           <View style={styles.resultsWrapperContainer}>
             <Text style={styles.resultsTxt}>Human</Text>
             <Text style={styles.resultTxtPoint}>{scoreHuman}</Text>
+            { scoreHuman === 5 ? <Text>Human Wins ! </Text> : null }
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => addScoreC(scoreCom)}>
           <View style={styles.resultsWrapperContainer}>
             <Text style={styles.resultsTxt}>COM</Text>
             <Text style={styles.resultTxtPoint}>{scoreCom}</Text>
+            { scoreCom >= 5 ? <Text>Com Wins ! </Text> : null}
           </View>
         </TouchableOpacity>
       </View>
