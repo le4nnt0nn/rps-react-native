@@ -22,12 +22,9 @@
         </a>
         <span> | </span>
     </h3>
+    <img src="./.docs/logo.png" alt="logo" width="500" height="500">
 </div>
-     
-     <div align="center">
-       <img src="./.docs/logo.png" alt="logo" width="500" height="500">
-     </div>
-
+   
 ***
 
 ### 📄 About 
