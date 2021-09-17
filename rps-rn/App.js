@@ -51,9 +51,11 @@ export default function App() {
             { scoreCom >= 5 ? <Text>Com Wins ! </Text> : null}
           </View>
           { scoreCom >=5 || scoreHuman >=5 ?  
-            <TouchableOpacity onPress={() => {setScoreHuman(null); setScoreCom(null);}}>
-              <Text>Play Again</Text>
-            </TouchableOpacity> : null
+            <View style={styles.restartWrapper}>
+              <TouchableOpacity style={styles.btnRestart} onPress={() => {setScoreHuman(null); setScoreCom(null);}}>
+              <Text style={styles.btnRestartTxT}>Play Again</Text>
+              </TouchableOpacity> 
+            </View> : null
           }
         </TouchableOpacity>
       </View>
@@ -111,5 +113,24 @@ const styles = StyleSheet.create({
   resultTxtPoint: {
     marginTop: 10,
     fontSize: 23,
+  },
+  restartWrapper : {
+    alignContent: "center",
+  },
+  btnRestart : {
+    backgroundColor: "white",
+    justifyContent: "center",
+    width: 200,
+    height: 50,
+    padding: 10,
+    margin: 10,
+    marginTop: 20,
+    borderRadius: 50,
+  },
+  btnRestartTxT : {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 25,
+    textAlign: "center",
   }
 });
